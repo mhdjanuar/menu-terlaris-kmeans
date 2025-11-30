@@ -9,13 +9,14 @@ package application.models;
  * @author mhdja
  */
 public class SalesKMeansModel {
-
     private int bulan;
     private int tahun;
     private String namaMenu;
     private String tipeMenu;
     private int totalTerjualPerMenu;
     private int omzetPerMenu;
+    private int idMenu;
+    private int cluster;
 
     public SalesKMeansModel() {}
 
@@ -55,5 +56,33 @@ public class SalesKMeansModel {
      */
     public void setTipeMenu(String tipeMenu) {
         this.tipeMenu = tipeMenu;
+    }
+    
+        /**
+     * @return the idMenu
+     */
+    public int getIdMenu() {
+        return idMenu;
+    }
+
+    /**
+     * @param idMenu the idMenu to set
+     */
+    public void setIdMenu(int idMenu) {
+        this.idMenu = idMenu;
+    }
+
+    /**
+     * @return the cluster
+     */
+    public int getCluster() {
+        return cluster;
+    }
+
+    /**
+     * @param cluster the cluster to set
+     */
+    public void setCluster(int cluster) {
+        this.cluster = cluster;
     }
 }

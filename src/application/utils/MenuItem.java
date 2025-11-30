@@ -9,12 +9,16 @@ package application.utils;
  * @author mhdja
  */
 public class MenuItem {
-    public String nama;
-    public double[] features; // fitur dinamis (banyak kolom numerik)
-    public int cluster = -1;
+    public String nama;        // nama yang ditampilkan (gabungan)
+    public String namaMenu;    // nama asli
+    public String tipeMenu;    // opsional
+    public double[] features;
+    public int cluster;
 
-    public MenuItem(String nama, double[] features) {
+    public MenuItem(String nama, String namaMenu, String tipeMenu, double[] features) {
         this.nama = nama;
+        this.namaMenu = namaMenu;
+        this.tipeMenu = tipeMenu;
         this.features = features;
     }
 }

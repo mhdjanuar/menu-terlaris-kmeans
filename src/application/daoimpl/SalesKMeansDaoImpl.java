@@ -64,6 +64,37 @@ public class SalesKMeansDaoImpl implements SalesKMeansDao {
 
        return list;
    }
+    
+    @Override
+    public void saveBulk(List<SalesKMeansModel> list) throws Exception {
+
+        String query =
+            "INSERT INTO dataset_kmeans " +
+            "(id_menu, cluster) " +
+            "VALUES (?, ?)";
+
+        try (PreparedStatement pstmt = dbConnection.prepareStatement(query)) {
+
+            for (SalesKMeansModel data : list) {
+                pstmt.setInt(1, data.getIdMenu());
+                pstmt.setInt(2, data.getCluster());
+
+                pstmt.addBatch(); // <-- tambahkan ke batch
+            }
+
+            pstmt.executeBatch(); // <-- execute sekali
+        }
+    }
+    
+    @Override
+    public void deleteAll() throws Exception {
+        String query = "TRUNCATE TABLE dataset_kmeans";
+
+        try (PreparedStatement pstmt = dbConnection.prepareStatement(query)) {
+            pstmt.executeUpdate();
+        }
+    }
+
 
 
 

@@ -14,4 +14,6 @@ import java.util.List;
 
 public interface SalesKMeansDao {
     List<SalesKMeansModel> findAll() throws Exception;
+    void saveBulk(List<SalesKMeansModel> list) throws Exception;
+    void deleteAll() throws Exception;
 }

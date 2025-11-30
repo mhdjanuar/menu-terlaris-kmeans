@@ -252,7 +252,7 @@ ORDER BY
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Laporan Hasil Kmeans]]></text>
+				<text><![CDATA[Laporan Data Analisa]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
